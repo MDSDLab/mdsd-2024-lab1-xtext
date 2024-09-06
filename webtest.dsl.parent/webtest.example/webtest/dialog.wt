@@ -1,0 +1,34 @@
+webtest example.DialogTest
+
+page Bootstrap
+  element largeModal = button "Large modal"
+  element smallModal = button "Small modal"
+  element largeDialog = div "myLargeModalLabel"
+  element smallDialog = div "mySmallModalLabel"
+end
+
+page ModalDialog
+  element close = button "Close"
+end
+
+test largeModalTest
+  open "https://getbootstrap.com/docs/4.0/components/modal/"
+  context as Bootstrap
+  	click largeModal
+  	context largeDialog as ModalDialog
+      wait 2 seconds
+  	  click close
+  	end
+  end
+end
+
+test smallModalTest
+  open "https://getbootstrap.com/docs/4.0/components/modal/"
+  context as Bootstrap
+  	click smallModal
+  	context smallDialog as ModalDialog
+      wait 2 seconds
+  	  click close
+  	end
+  end
+end

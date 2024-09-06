@@ -1,0 +1,44 @@
+webtest example.CalculatorTest
+
+page Calculator
+  element display = input "display"
+  element clear = input "AC"
+  element add = input "+"
+  element subtract = input "-"
+  element multiply = input "×"
+  element divide = input "/"
+  element compute = input "="
+  
+  operation binaryOperation(string left, element op, string right)
+    click clear
+    fill display with left
+    click op
+    fill display with right
+    click compute
+  end
+  
+  operation multiply(string left, string right)
+    binaryOperation using left,multiply,right
+  end
+end
+
+test mul1
+  open "https://www.theonlinecalculator.com/"
+  context as Calculator
+    wait until display exists
+    print "Page opened"
+    multiply using "23","6"
+    assert display is "138"
+  end
+end
+
+integer timeout = 10
+open "https://www.theonlinecalculator.com/"
+wait timeout seconds until input "display" exists 
+click input "AC"
+click input "2"
+click input "3"
+click input "×"
+click input "6"
+click input "="
+assert input "display" is "138"

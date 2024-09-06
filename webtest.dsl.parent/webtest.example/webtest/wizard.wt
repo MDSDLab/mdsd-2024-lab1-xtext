@@ -1,0 +1,61 @@
+webtest example.WizardTest
+
+page Name
+  element firstName = input "First name..."
+  element lastName = input "Last name..."
+end
+
+page ContactInfo
+  element email = input "E-mail..."
+  element phone = input "Phone..."
+end
+
+page Birthday
+  element day = input "dd"
+  element month = input "mm"
+  element year = input "yyyy"
+end
+
+page LoginInfo
+  element username = input "Username..."
+  element password = input "Password..."
+end
+
+open "https://www.w3schools.com/howto/howto_js_form_steps.asp"
+wait 1 seconds
+element acceptCookies = div "accept-choices"
+if acceptCookies exists then
+  click acceptCookies
+end
+
+while button "Next" exists do
+  context as Name
+    if firstName exists then
+      fill firstName with "Agent"
+      fill lastName with "Smith"
+      assert lastName is "Smith"
+    end
+  end
+  context as ContactInfo
+    if email exists then
+      fill email with "smith@matrix.com"
+      fill phone with "5551234"
+      assert email contains "smith"
+    end
+  end
+  context as Birthday
+    if day exists then
+      fill day with "01"
+      fill month with "01"
+      fill year with "2000"
+    end
+  end
+  context as LoginInfo
+    if username exists then
+      fill username with "smith"
+      fill password with "secret"
+    end
+  end
+  wait 1 seconds
+  click button "Next"
+end

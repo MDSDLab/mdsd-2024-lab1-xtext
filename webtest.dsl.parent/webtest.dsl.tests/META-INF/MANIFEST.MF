@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: webtest.dsl.tests
+Bundle-ManifestVersion: 2
+Bundle-Name: webtest.dsl.tests
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: webtest.dsl.tests; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: webtest.dsl,
+ org.eclipse.xtext.testing,
+ org.eclipse.xtext.xbase.testing,
+ webtest.model,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.35.0",
+ junit-jupiter-api,
+ junit-jupiter-engine,
+ junit-jupiter-params,
+ junit-platform-commons,
+ junit-platform-engine,
+ junit-platform-launcher
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: webtest.dsl.tests;x-internal=true

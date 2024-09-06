@@ -1,0 +1,34 @@
+webtest example.TestParamsTest
+
+page Calculator
+  element display = input "display"
+  element clear = input "AC"
+  element add = input "+"
+  element subtract = input "-"
+  element multiply = input "×"
+  element divide = input "/"
+  element compute = input "="
+  
+  operation binaryOperation(string left, element op, string right)
+    click clear
+    fill display with left
+    click op
+    fill display with right
+    click compute
+  end
+  
+  operation multiply(string left, string right)
+    binaryOperation using left,multiply,right
+  end
+end
+
+test MultiplicationTest(string left, string right, string result)
+with "2","3","6"
+with "4","7","28"
+  open "https://www.theonlinecalculator.com/"
+  context as Calculator
+    multiply using left,right
+    assert display is result
+    capture page
+  end
+end

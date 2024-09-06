@@ -1,0 +1,33 @@
+webtest example.ManualTest
+
+operation Click(element e)
+  // if you don't have to implement the Capture extension, remove the following line:
+  capture e
+  click e
+end
+
+operation Fill(element e, string text)
+  fill e with text
+  // if you don't have to implement the Capture extension, remove the following line:
+  capture e
+end
+
+manual LetMeGoogleThatForYou
+  print "<h1>Google search</h1>"
+  print "<p>Open the page <b>https://www.google.com</b> in a browser:</p>"
+  open "https://www.google.com"
+  // if you don't have to implement the Capture extension, remove the following line:
+  capture page
+  print "<p>Accept cookies:</p>"
+  Click using button "L2AGLb"
+  string searchText = "jwst"
+  print "<p>Type <b>",searchText,"</b> into the search field:</p>"
+  Fill using textarea "q", searchText
+  element searchButton = input "btnK"
+  print "<p>Finally, click the <b>",searchButton,"</b> button:</p>"
+  Click using searchButton
+  wait 2 seconds
+  print "<p>And now you can see the search results:</p>"
+  // if you don't have to implement the Capture extension, remove the following line:
+  capture page
+end

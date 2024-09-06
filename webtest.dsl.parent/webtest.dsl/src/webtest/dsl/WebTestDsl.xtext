@@ -1,0 +1,6 @@
+grammar webtest.dsl.WebTestDsl with org.eclipse.xtext.common.Terminals
+
+import "webtest.model"
+
+Main: 'webtest' testClass+=ID ('.' testClass+=ID)*;
+

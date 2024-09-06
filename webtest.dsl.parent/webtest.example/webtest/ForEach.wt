@@ -1,0 +1,14 @@
+webtest example.ForEachTest
+
+operation search(string text)
+  fill textarea "q" with text
+  click input "btnK"
+  foreach result in h3 ""
+  	print result
+  end
+end
+
+open "https://www.google.com"
+click button "L2AGLb"
+search using "jwst"
+wait 2 seconds

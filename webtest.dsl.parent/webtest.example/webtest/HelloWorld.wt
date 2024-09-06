@@ -1,0 +1,5 @@
+webtest example.HelloWorldTest
+
+test SayHelloTest
+	print "Hello World!"
+end

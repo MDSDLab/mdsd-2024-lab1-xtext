@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: webtest.dsl
+Bundle-ManifestVersion: 2
+Bundle-Name: webtest.dsl
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: webtest.dsl; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common,
+ org.eclipse.emf.ecore.xcore.lib,
+ org.eclipse.emf.ecore.xcore,
+ webtest.model,
+ webtest.generator,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.35.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ org.eclipse.xtend.lib;bundle-version="2.35.0",
+ slf4j.api
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: webtest.dsl.parser.antlr.internal,
+ webtest.dsl.parser.antlr,
+ webtest.dsl.generator,
+ webtest.dsl,
+ webtest.dsl.serializer,
+ webtest.dsl.scoping,
+ webtest.dsl.services,
+ webtest.dsl.validation
+Import-Package: org.apache.log4j
