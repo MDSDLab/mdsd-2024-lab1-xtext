@@ -40,7 +40,9 @@ public class SeleniumTest {
 			System.setProperty("webdriver.chrome.driver", chromeDriverLocation);
 		}
 		logger.info("Using chromedriver: "+chromeDriverLocation);
-		driver = new ChromeDriver();
+		ChromeOptions opt = new ChromeOptions();
+		opt.addArguments("--disable-search-engine-choice-screen");
+		driver = new ChromeDriver(opt);
 		javascript = (JavascriptExecutor)driver;
 	    actions = new Actions(driver);
 	    driver.manage().window().maximize();
