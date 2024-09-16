@@ -307,6 +307,7 @@ class WebTestProjectGenerator {
 		import org.openqa.selenium.TakesScreenshot;
 		import org.openqa.selenium.WebDriver;
 		import org.openqa.selenium.chrome.ChromeDriver;
+		import org.openqa.selenium.chrome.ChromeOptions;
 		import org.openqa.selenium.interactions.Actions;
 		import org.openqa.selenium.support.ui.FluentWait;
 		import org.slf4j.Logger;
@@ -333,7 +334,9 @@ class WebTestProjectGenerator {
 					System.setProperty("webdriver.chrome.driver", chromeDriverLocation);
 				}
 				logger.info("Using chromedriver: "+chromeDriverLocation);
-				driver = new ChromeDriver();
+				ChromeOptions opt = new ChromeOptions();
+				opt.addArguments("--disable-search-engine-choice-screen");
+				driver = new ChromeDriver(opt);
 				javascript = (JavascriptExecutor)driver;
 			    actions = new Actions(driver);
 			    driver.manage().window().maximize();
