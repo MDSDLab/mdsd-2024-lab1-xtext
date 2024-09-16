@@ -142,7 +142,6 @@ class TypeAnalysisTests extends TypeAnalysisTestBase {
 
 		operation op3(string c, boolean b)
 		    print c, b
-		    javascript "js" using c, b
 		end		
 		''',
 		#{
