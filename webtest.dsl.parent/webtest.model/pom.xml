@@ -10,7 +10,6 @@
 	<packaging>eclipse-plugin</packaging>
 
 	<build>
-		<pluginManagement>
       <plugins>
         <plugin>
           <groupId>org.eclipse.xtext</groupId>
@@ -126,7 +125,6 @@
           </dependencies> 
         </plugin>
       </plugins>
-		</pluginManagement>
 	</build>
 
 </project>
