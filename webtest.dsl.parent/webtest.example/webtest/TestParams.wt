@@ -29,6 +29,5 @@ with "4","7","28"
   context as Calculator
     multiply using left,right
     assert display is result
-    capture page
   end
 end
