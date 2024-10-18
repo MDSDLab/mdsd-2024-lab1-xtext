@@ -7,7 +7,7 @@ A laborfeladat célja a WebTest nyelv fordítójának elkészítése, és a WebT
 # Compiler and code generator for the WebTest language
 
 The goal of this lab is to create a compiler for the WebTest language and to make a generator that produces JUnit code from the WebTest code. The description of the tasks can be found here:
-* [lab 1: compiler](https://github.com/MDSDLab/LectureMaterials/blob/main/lab1-xtext-en/README.md) (Deadline: September 23)
-* [lab 2: generator](https://github.com/MDSDLab/LectureMaterials/blob/main/lab2-xtend-en/README.md) (Deadline: October 7)
+* [lab 1: compiler](https://github.com/MDSDLab/LectureMaterials/blob/main/lab1-xtext-en/README.md) (Deadline: November 4)
+* [lab 2: generator](https://github.com/MDSDLab/LectureMaterials/blob/main/lab2-xtend-en/README.md) (Deadline: November 18)
 
 
